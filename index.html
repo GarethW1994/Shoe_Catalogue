@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Shoe Catalogue</title>
+	<link rel="stylesheet" href="css/catalogue.css" />
+</head>
+
+<body>
+	<div class="navBar">
+            <ul>
+                <li><h3>SHOE DATA</h3></li>
+                <li>
+                
+            <input type="button" id="modalActive" value="Add New Shoe Item"/>
+                </li>
+            </ul>
+	</div>
+	<div class="modal">
+		<div class="title">
+			<h1>SHOE CATALOGUE</h1>
+		</div>
+	</div>
+	<h3>Different Color VANS <sup>&reg;</sup></h3>
+	<div class="imagesPopping">
+		<img src="img/blackShoe.jpg" />
+		<img src="img/redShoe.jpg" />
+		<img src="img/blueShoe.jpg" />
+		<img src="img/yellowShoe.jpg" />
+		<img src="img/greenShoe.jpg" />
+	</div>
+
+	<h3>Search for the perfect sneaker:</h3>
+<div id="searchContainer">
+	
+	
+	<div class="searchForm">
+		<table id="#search">
+		<tr>
+				<td>
+					<label>Brand: </label>
+				</td>
+				<td>
+					<select id="selectBrand">
+						<script src="JavaScript/catalogue.js" type="text/x-handlebars-some-template" id="brandList">
+							<option name="brand">{{brand}}</option>
+						</script>
+					</select>
+				</td>
+			</tr>
+
+				<tr>
+					<td>
+					<label>Color: </label>
+					</td>
+					<td>
+						<select id="selectColor">
+						<script src="JavaScript/catalogue.js" type="text/x-handlebars-some-template" id="colorList">
+							<option name="color">{{color}}</option>
+						</script>
+						</select>
+					</td>
+				</tr>
+			
+			<tr>
+				<td>
+					<label>Size: </label>
+				</td>
+				
+					<td>
+					<select id="selectSize">
+						<script src="JavaScript/catalogue.js" type="text/x-handlebars-some-template" id="sizeList">
+							<option name="size">{{size}}</option>
+						</script>
+					</select>
+					</td>
+				</tr>
+		
+				</table>
+			<div class="Button">
+			<input type="button" value="Search" id="searchBTN"/>
+			</div>
+		</div>
+	</div>
+	
+	
+
+		<h3>Search Results:</h3>
+	<div class="display">
+	<div class ="searchResults">
+		<ul class="ul">
+			<script src="JavaScript/catalogue.js" type="text/x-handlebars-some-template" id="outputItems">
+					<li><b>Brand Name</b> 	{{brand}}</li>
+					<li><b>In Stock</b> 	{{in_stock}}</li>
+					<li><b>Price </b> 		R{{price}}</li>
+					<li><b>Shoe Size</b>	{{size}}</li>
+					<li><b>Shoe Color</b>	{{color}}</li>
+			</script>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<div class="container2">
+    <div class="addingData">
+        <h3 id="headingAddNew">Add New Shoe Item:</h3>
+			<table>
+				<tr>
+					<td>Brand:</td> 
+					<td><input type="text" name="brand" size="15" id="addedBrand"/></td>
+				</tr>
+
+				<tr>
+					<td>Color: </td>
+					
+				<td>
+					<input type="text" name="color" size="13" id="addedColor"/>
+				</td>
+				</tr>
+				
+				<tr>
+					<td>Size:</td>
+					<td>
+					<select>
+                        <option name="addedSize" value='2'>2</option>
+						<option name="addedSize" value='3'>3</option>
+						<option name="addedSize" value='4'>4</option>
+						<option name="addedSize" value='5'>5</option>
+						<option name="addedSize" value='6'>6</option>
+						<option name="addedSize" value='7'>7</option>
+                        <option name="addedSize" value='8'>8</option>
+                        <option name="addedSize" value='9'>9</option>
+                        <option name="addedSize" value='10'>10</option>
+					</select>
+					</td>
+					</tr>
+				
+				<tr>
+					<td>Price:</td>
+					<td><input type="text" size="5" name="price" id="addedPrice"/></td>
+				</tr>
+				<tr>
+					<td>Quantity:</td>
+					<td><input type="text" size="10" name="stock" id="addedStock"/></td>	
+				</tr>
+			 </table>
+                <h6 class="close">X</h6>
+				<input type="button" id="addBTN" value="Add Item"/>
+	       <div class="errorAlert">
+                <h1>OOPS!</h1>   
+                <p id="errorMessage"></p>
+        </div>
+		</div>
+        
+        <div class="success">
+            <h3 id="successHeading">Item Successfully Added !</h3>
+            <div id ="successIMG" ></div>
+            <input type="button" id="successBTN" value="OK, got it!"/>
+        </div>
+	</div>
+	
+	<script src="handlebars/handlebars-v4.0.5.js" charset="utf-8"></script>
+	<script src="JavaScript/catalogue.js" charset="utf-8"></script>
+</body>
+
+</html>
